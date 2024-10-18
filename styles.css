@@ -1,87 +1,59 @@
-html, body {
-    height: 100%;
-}
-body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
-* {
-    font-family: 'Inter';
-    font-weight: normal;
-}
-.container {
-    background-color: #d0d0d0;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .icon {
-    width: 176px;
-    height: 87px;
+  width: 176px;
+  height: 87px;
 }
 
 .login {
-    background-color: #8B8B8B;
-    width: 32.625rem;
-    height: 33.5rem;
-    padding: 2rem;
-    border-radius: 30px;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    align-items: center;
+  background-color: #8b8b8b;
+  width: 32.625rem;
+  height: 33.5rem;
+  padding: 2rem;
+  border-radius: 30px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
 }
 
 .login h3 {
-    margin-top: 3.5rem;
-    font-size: 20px;
+  margin-top: 3.5rem;
+  font-size: 20px;
 }
 
 .loginInput {
-    width: 19.938rem;
-    height: 2.813rem;
-    padding-left: 1rem;
-    border: none;
-    border-radius: 10px;
+  width: 19.938rem;
+  height: 2.813rem;
+  padding-left: 1rem;
+  border: none;
+  border-radius: 10px;
+}
+
+.invalidLoginInput {
+  border: 1px solid red;
+}
+
+.invalidLoginInput::placeholder {
+  color: red;
 }
 
 .loginSubmit {
-    width: 15.938rem;
-    height: 2.5rem;
-    background-color: #476087;
-    color: white;
-    font-weight: 600;
-    border: none;
-    border-radius: 10px;
+  width: 15.938rem;
+  height: 2.5rem;
+  background-color: #476087;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+}
+
+.loginSubmit:disabled {
+  background-color: #6e7d95;
 }
 
 .input {
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    margin: 0.5rem;
+  margin: 0.5rem;
 }
 
 .forgotPassword {
-    margin: 1rem;
-}
-
-footer {
-    background-color: #616161;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    width: 100%;
-}
-
-footer p {
-    font-weight: bold;
-    margin: 0;
-    font-size: 18px;
+  margin: 1rem;
 }
