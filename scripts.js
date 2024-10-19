@@ -43,6 +43,19 @@ function sendForm() {
   ) {
     navigate("./pesquisa/index.html");
   } else {
-    alert("Email ou senha inválidos");
+    popUp("Email ou senha incorretos. \nCorriga e tente novamente.");
   }
+}
+
+function popUp(text) {
+  const popUp = document.getElementById("popUp");
+
+  popUp.style.display = "flex";
+  popUp.getElementsByTagName("p")[0].innerText = text;
+}
+
+function closePopUp() {
+  const popUp = document.getElementById("popUp");
+
+  popUp.style.display = "none";
 }

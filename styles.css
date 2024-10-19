@@ -44,16 +44,59 @@
   font-weight: 600;
   border: none;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .loginSubmit:disabled {
   background-color: #6e7d95;
+  cursor: not-allowed;
 }
 
 .input {
   margin: 0.5rem;
 }
 
-.forgotPassword {
+#forgotPassword {
   margin: 1rem;
+  width: 15rem;
+  height: 2.5rem;
+  text-align: center;
+}
+
+#forgotPassword:hover {
+  cursor: pointer;
+}
+
+#popUp {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#popUpContainer {
+  width: 34.136rem;
+  height: 21.407rem;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#popUpContainer p {
+  width: 22.196rem;
+  text-align: center;
+}
+
+#popUpContainer input {
+  cursor: pointer;
 }

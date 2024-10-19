@@ -7,6 +7,22 @@ header {
   justify-content: space-between;
 }
 
+body {
+  justify-content: flex-start;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+}
+
+hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .icon {
   background-color: #d9d9d9;
   width: 11rem;
@@ -18,7 +34,7 @@ header {
 .search {
   background-color: #b3b3b3;
   border-radius: 5px;
-  width: 47.75rem;
+  width: 45%;
   height: 3rem;
   display: flex;
   align-items: center;
@@ -42,17 +58,33 @@ header {
   background-color: #b6b6b6;
 }
 
+.categoryContainer {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.categoryList {
+  display: flex;
+  flex-direction: row;
+  margin-left: 0.5rem;
+}
+
+.categoryTitle {
+  margin-left: 0.5rem;
+}
+
 .categoryItem {
   width: 15.188rem;
-  height: 7.813rem;
   background-color: #e6e6e6;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
+  margin-left: 2rem;
+  border-radius: 5px;
 }
 
-.categoryTitle {
+.categoryName {
   color: white;
   font-weight: bold;
   background-color: #585858;
@@ -60,11 +92,36 @@ header {
   height: 1.938rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+}
+
+.categoryName a {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  margin-left: 0.5rem;
+}
+
+.star {
+  position: relative;
+  bottom: 4.5rem;
+  left: 6.2rem;
 }
 
 .categoryIcon {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
+}
+
+.addItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15.188rem;
+  background-color: #585858;
+  color: white;
+  margin-left: 2rem;
+  border-radius: 5px;
+  font-size: 64px;
+  font-weight: bolder;
 }
 
 .username {

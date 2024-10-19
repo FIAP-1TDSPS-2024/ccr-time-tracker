@@ -20,14 +20,14 @@
         <input
           id="email"
           class="loginInput input shadow"
-          onchange="validateForm()"
+          oninput="validateForm()"
           type="text"
           placeholder="Email"
         />
         <input
           id="password"
           class="loginInput input shadow"
-          onchange="validateForm()"
+          oninput="validateForm()"
           type="password"
           placeholder="Senha"
         />
@@ -39,8 +39,24 @@
           onclick="sendForm();"
           disabled
         />
-        <a class="forgotPassword">Esqueci minha senha</a>
+        <a
+          id="forgotPassword"
+          onclick="popUp('Entre em contato com o time de suporte ou com seu gestor para recuperar sua senha.')"
+          >Esqueci minha senha</a
+        >
       </section>
+    </div>
+    <div id="popUp">
+      <div id="popUpContainer">
+        <img src="./img/x.svg" />
+        <p></p>
+        <input
+          type="button"
+          class="loginSubmit shadow"
+          onclick="closePopUp()"
+          value="OK"
+        />
+      </div>
     </div>
     <footer>
       <p>Made with ❤️</p>
