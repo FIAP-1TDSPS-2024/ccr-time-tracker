@@ -75,6 +75,7 @@ function createItems(categoryName) {
   if (categoryName == "all") {
     const addItem = document.createElement("div");
     addItem.className = "addItem shadow";
+    addItem.onclick = showAddItemPopUp;
     addItem.innerHTML = `
     <a>+</a>
   `;
@@ -82,12 +83,36 @@ function createItems(categoryName) {
   }
 }
 
+function showAddItemPopUp() {
+  const addItemPopUp = document.getElementById("addItemPopUp");
+  addItemPopUp.style.display = "flex";
+}
+
+function closeAddItemPopUp() {
+  const addItemPopUp = document.getElementById("addItemPopUp");
+  addItemPopUp.style.display = "none";
+}
+
+function addItem() {
+  const itemSlug = document.getElementById("itemSlug");
+  const itemURL = document.getElementById("itemURL");
+
+  allItems.push({
+    name: itemSlug.value,
+    icon: "../img/train.svg",
+    favorite: false,
+  });
+
+  createItems("all");
+  createItems("favorites");
+
+  closeAddItemPopUp();
+}
+
 function setFavorite(element) {
   const itemName = element.getAttribute("value");
-  console.log(typeof itemName);
   const index = allItems.findIndex((item) => item.name === itemName);
 
-  console.log(index);
   allItems[index].favorite = !allItems[index].favorite;
 
   createItems("all");

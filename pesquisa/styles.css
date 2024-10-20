@@ -123,6 +123,64 @@ hr {
   border-radius: 5px;
   font-size: 64px;
   font-weight: bolder;
+  cursor: pointer;
+}
+
+#addItemPopUp {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.addItemPopUpContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #d9d9d9;
+  width: 30rem;
+  height: 23rem;
+  padding: 3rem;
+}
+
+.addItemPopUpContent h2 {
+  margin: 0;
+}
+
+#popUpInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 10rem;
+}
+
+.addItemPopUpContent input {
+  width: 19.938rem;
+  height: 2.813rem;
+  border: none;
+  border-radius: 5px;
+  padding-left: 1rem;
+}
+
+.button {
+  width: 10rem;
+  height: 1.785rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #476087;
+  color: white;
+}
+
+#closePopUpButton {
+  color: black;
+  background-color: #b3b3b3;
 }
 
 .username {
