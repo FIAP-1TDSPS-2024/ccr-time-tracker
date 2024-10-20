@@ -2,11 +2,17 @@ function navigate(path) {
   window.location.href = path;
 }
 
-function validateForm() {
-  const email = document.getElementById("email");
-  const password = document.getElementById("password");
-  const button = document.getElementById("loginSubmit");
+const password = document.getElementById("password");
+const email = document.getElementById("email");
+const button = document.getElementById("loginSubmit");
 
+password.addEventListener("keypress", function (event) {
+  if (event.key == "Enter") {
+    sendForm();
+  }
+});
+
+function validateForm() {
   if (email.value !== "") {
     email.classList.remove("invalidLoginInput");
   }
@@ -26,9 +32,6 @@ const correctPassword = "123456";
 const correctEmail = "teste@fiap.com.br";
 
 function sendForm() {
-  const email = document.getElementById("email");
-  const password = document.getElementById("password");
-
   if (email.value !== correctEmail || password.value !== correctPassword) {
     email.classList.add("invalidLoginInput");
     password.classList.add("invalidLoginInput");
