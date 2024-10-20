@@ -12,13 +12,14 @@
     <title>CCR Time Tracker</title>
   </head>
   <body>
+    <!-- Header -->
     <header>
       <div class="icon">
         <img src="../img/ccr.svg" />
       </div>
       <div class="search">
         <img src="../img/search.svg" />
-        <input type="text" placeholder="Buscar..." />
+        <input id="search" oninput="search()" type="text" placeholder="Buscar..." />
       </div>
       <div class="headerSeparator"></div>
       <h3 class="username">Wendell Nascimento</h3>
@@ -29,6 +30,7 @@
       <!-- div invisível que centraliza o botão de sair em telas maiores -->
       <div></div>
     </header>
+
     <main class="categoryContainer">
       <div class="category">
         <h2 class="categoryTitle">Favoritos</h2>
@@ -67,6 +69,8 @@
       </div>
       </div>
     </main>
+
+    <!-- Footer -->
     <footer>
       <p>Made with ❤️</p>
     </footer>
