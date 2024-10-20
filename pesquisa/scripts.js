@@ -35,11 +35,16 @@ const allItems = [
   {
     name: "TEPP",
     icon: "../img/train.svg",
+    favorite: false,
   },
 ];
 
 function createItems(categoryName) {
   const categoryList = document.getElementById(categoryName);
+
+  while (categoryList.firstChild) {
+    categoryList.removeChild(categoryList.firstChild);
+  }
 
   let categoryItems = [];
   if (categoryName == "favorites") {
@@ -55,9 +60,11 @@ function createItems(categoryName) {
     item.className = "categoryItem";
     item.innerHTML = `
       <img src="${categoryItem.icon}" class="categoryIcon">
-      <img class="star" src="${
-        categoryItem.favorite ? "../img/star.svg" : "../img/star-disabled.svg"
-      }" />
+      <img onclick="setFavorite(this)" value="${
+        categoryItem.name
+      }" class="star" src="${
+      categoryItem.favorite ? "../img/star.svg" : "../img/star-disabled.svg"
+    }" />
       <div class="categoryName"><a>${categoryItem.name}</a></div>
     `;
 
@@ -73,6 +80,18 @@ function createItems(categoryName) {
   `;
     categoryList.appendChild(addItem);
   }
+}
+
+function setFavorite(element) {
+  const itemName = element.getAttribute("value");
+  console.log(typeof itemName);
+  const index = allItems.findIndex((item) => item.name === itemName);
+
+  console.log(index);
+  allItems[index].favorite = !allItems[index].favorite;
+
+  createItems("all");
+  createItems("favorites");
 }
 
 createItems("all");
