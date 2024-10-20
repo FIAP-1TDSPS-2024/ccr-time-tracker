@@ -105,6 +105,7 @@ hr {
   position: relative;
   bottom: 4.5rem;
   left: 6.2rem;
+  cursor: pointer;
 }
 
 .categoryIcon {
