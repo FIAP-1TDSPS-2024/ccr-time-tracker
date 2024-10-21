@@ -139,11 +139,35 @@ function saveItems(items) {
 function validateLocalStorage() {
   const items = localStorage.getItem(itemsKey);
 
-  if (items) {
-    return;
-  }
+  //if (items) {
+  //  return;
+  //}
 
   const allItems = [
+    {
+      name: "TMP",
+      icon: "../img/clock.svg",
+      url: "../tmp/index.html",
+      favorite: true,
+    },
+    {
+      name: "TEPP",
+      icon: "../img/train.svg",
+      url: "./index.html",
+      favorite: false,
+    },
+    {
+      name: "TMP",
+      icon: "../img/clock.svg",
+      url: "../tmp/index.html",
+      favorite: true,
+    },
+    {
+      name: "TEPP",
+      icon: "../img/train.svg",
+      url: "./index.html",
+      favorite: false,
+    },
     {
       name: "TMP",
       icon: "../img/clock.svg",

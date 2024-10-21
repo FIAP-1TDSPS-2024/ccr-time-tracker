@@ -66,6 +66,7 @@ hr {
 .categoryList {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   margin-left: 0.5rem;
 }
 
@@ -80,7 +81,8 @@ hr {
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  margin-left: 2rem;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
   border-radius: 5px;
 }
 
@@ -117,9 +119,10 @@ hr {
   align-items: center;
   justify-content: center;
   width: 15.188rem;
+  height: 8.5rem;
   background-color: #585858;
   color: white;
-  margin-left: 2rem;
+  margin-left: 1rem;
   border-radius: 5px;
   font-size: 64px;
   font-weight: bolder;
