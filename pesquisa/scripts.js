@@ -48,10 +48,12 @@ const allItems = [
 function createItems(categoryName) {
   const categoryList = document.getElementById(categoryName);
 
+  // Remove all items from category - refresh
   while (categoryList.firstChild) {
     categoryList.removeChild(categoryList.firstChild);
   }
 
+  // Filter items to category favorites
   let categoryItems = [];
   if (categoryName == "favorites") {
     categoryItems = allItems.filter((item) => item.favorite);
@@ -59,6 +61,7 @@ function createItems(categoryName) {
     categoryItems = allItems;
   }
 
+  // Add all items in category
   for (let i = 0; i < categoryItems.length; i++) {
     const categoryItem = categoryItems[i];
 
