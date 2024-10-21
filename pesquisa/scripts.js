@@ -1,5 +1,9 @@
+function navigate(path) {
+  window.location.href = path;
+}
+
 function exit() {
-  window.location.href = "../index.html";
+  navigate("../index.html");
 }
 
 function search() {
@@ -30,11 +34,13 @@ const allItems = [
   {
     name: "TMP",
     icon: "../img/clock.svg",
+    url: "../tmp/index.html",
     favorite: true,
   },
   {
     name: "TEPP",
     icon: "../img/train.svg",
+    url: "./index.html",
     favorite: false,
   },
 ];
@@ -58,6 +64,9 @@ function createItems(categoryName) {
 
     const item = document.createElement("div");
     item.className = "categoryItem";
+    item.onclick = function () {
+      navigate(categoryItem.url);
+    };
     item.innerHTML = `
       <img src="${categoryItem.icon}" class="categoryIcon">
       <img onclick="setFavorite(this)" value="${
@@ -100,6 +109,7 @@ function addItem() {
   allItems.push({
     name: itemSlug.value,
     icon: "../img/train.svg",
+    url: itemURL.value,
     favorite: false,
   });
 
