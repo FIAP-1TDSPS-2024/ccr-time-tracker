@@ -66,9 +66,11 @@ function createItems(categoryName) {
     const categoryItem = categoryItems[i];
 
     const item = document.createElement("div");
-    item.className = "categoryItem";
-    item.onclick = function () {
-      navigate(categoryItem.url);
+    item.className = "categoryItem shadow";
+    item.onclick = function (event) {
+      if (event.target.classList[0] !== "star") {
+        navigate(categoryItem.url);
+      }
     };
     item.innerHTML = `
       <img src="${categoryItem.icon}" class="categoryIcon">
