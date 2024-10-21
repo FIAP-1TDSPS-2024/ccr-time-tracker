@@ -30,22 +30,8 @@ function search() {
   }
 }
 
-const allItems = [
-  {
-    name: "TMP",
-    icon: "../img/clock.svg",
-    url: "../tmp/index.html",
-    favorite: true,
-  },
-  {
-    name: "TEPP",
-    icon: "../img/train.svg",
-    url: "./index.html",
-    favorite: false,
-  },
-];
-
 function createItems(categoryName) {
+  const allItems = getItems();
   const categoryList = document.getElementById(categoryName);
 
   // Remove all items from category - refresh
@@ -111,6 +97,8 @@ function addItem() {
   const itemSlug = document.getElementById("itemSlug");
   const itemURL = document.getElementById("itemURL");
 
+  const allItems = getItems();
+
   allItems.push({
     name: itemSlug.value,
     icon: "../img/train.svg",
@@ -118,6 +106,7 @@ function addItem() {
     favorite: false,
   });
 
+  saveItems(allItems);
   createItems("all");
   createItems("favorites");
 
@@ -125,14 +114,53 @@ function addItem() {
 }
 
 function setFavorite(element) {
+  const allItems = getItems();
+
   const itemName = element.getAttribute("value");
   const index = allItems.findIndex((item) => item.name === itemName);
 
   allItems[index].favorite = !allItems[index].favorite;
 
+  saveItems(allItems);
   createItems("all");
   createItems("favorites");
 }
 
+const itemsKey = "all-items";
+
+function getItems() {
+  return JSON.parse(localStorage.getItem(itemsKey));
+}
+
+function saveItems(items) {
+  return localStorage.setItem(itemsKey, JSON.stringify(items));
+}
+
+function validateLocalStorage() {
+  const items = localStorage.getItem(itemsKey);
+
+  if (items) {
+    return;
+  }
+
+  const allItems = [
+    {
+      name: "TMP",
+      icon: "../img/clock.svg",
+      url: "../tmp/index.html",
+      favorite: true,
+    },
+    {
+      name: "TEPP",
+      icon: "../img/train.svg",
+      url: "./index.html",
+      favorite: false,
+    },
+  ];
+
+  saveItems(allItems);
+}
+
+validateLocalStorage();
 createItems("all");
 createItems("favorites");
