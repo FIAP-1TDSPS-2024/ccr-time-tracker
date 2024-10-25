@@ -6,6 +6,9 @@ const password = document.getElementById("password");
 const email = document.getElementById("email");
 const button = document.getElementById("loginSubmit");
 
+const correctPassword = "123456";
+const correctEmail = "teste@fiap.com.br";
+
 password.addEventListener("keypress", function (event) {
   if (event.key == "Enter") {
     sendForm();
@@ -27,9 +30,6 @@ function validateForm() {
     button.setAttribute("disabled", true);
   }
 }
-
-const correctPassword = "123456";
-const correctEmail = "teste@fiap.com.br";
 
 function sendForm() {
   if (email.value !== correctEmail || password.value !== correctPassword) {
