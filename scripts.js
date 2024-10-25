@@ -44,6 +44,7 @@ function sendForm() {
     !email.classList.contains("invalidLoginInput") &&
     !password.classList.contains("invalidLoginInput")
   ) {
+    localStorage.setItem('logged', 'true');
     navigate("./pesquisa/index.html");
   } else {
     popUp("Email ou senha incorretos. \nCorriga e tente novamente.");
