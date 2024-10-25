@@ -105,12 +105,12 @@ footer {
 
 .linesInputs label {
   padding: 1rem;
-  border-style: solid;
   position : absolute;
 }
 
 #linha8Label {
   background-color: #A19E8F;
+  margin-left: -2.6rem;
 }
 
 
@@ -118,9 +118,6 @@ footer {
   background-color: #02B397;
 }
 
-.linesInputs input[type=radio]+label {
-	font-weight: normal;
-}
 
 .linesInputs input[type=radio]:checked+label {
 	font-weight: bold;
