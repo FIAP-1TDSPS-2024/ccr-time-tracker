@@ -70,7 +70,7 @@ footer {
   font-weight: bolder;
 }
 
-.exit {
+.back {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,4 +83,49 @@ footer {
   margin-left: 1.25rem;
   margin-right: 1.25rem;
   cursor: pointer;
+}
+
+.linesDate {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+.lines {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.linesInputs input {
+  display: none;
+}
+
+.linesInputs label {
+  padding: 1rem;
+  border-style: solid;
+  position : absolute;
+}
+
+#linha8Label {
+  background-color: #A19E8F;
+}
+
+
+#linha9Label {
+  background-color: #02B397;
+}
+
+.linesInputs input[type=radio]+label {
+	font-weight: normal;
+}
+
+.linesInputs input[type=radio]:checked+label {
+	font-weight: bold;
+}
+
+.linesInputs input[type=radio]:focus+label {
+	border: 1px dotted #000;
 }
