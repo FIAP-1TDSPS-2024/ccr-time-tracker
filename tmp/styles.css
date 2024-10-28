@@ -98,31 +98,49 @@ footer {
   flex-direction: column;
 }
 
-
 .linesInputs input {
   display: none;
 }
 
 .linesInputs label {
-  padding: 1rem;
-  position : absolute;
+  width: 4rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
 }
 
 #linha8Label {
-  background-color: #A19E8F;
-  margin-left: -2.6rem;
+  background-color: #a19e8f;
+  margin-left: -4rem;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border: 5px solid #a19e8f;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
 }
-
 
 #linha9Label {
-  background-color: #02B397;
+  background-color: #02b397;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 5px solid #02b397;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
 }
 
-
-.linesInputs input[type=radio]:checked+label {
-	font-weight: bold;
+.linesInputs input[type="radio"]:checked + label {
+  font-weight: bold;
+  color: white;
+  border: 5px solid white !important;
+  border-top: 0 !important;
+  border-right: 0 !important;
+  border-left: 0 !important;
 }
 
-.linesInputs input[type=radio]:focus+label {
-	border: 1px dotted #000;
+.linesInputs input[type="radio"]:focus + label {
+  border: 1px dotted #000;
 }
