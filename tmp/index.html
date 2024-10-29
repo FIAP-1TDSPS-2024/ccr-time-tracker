@@ -45,19 +45,25 @@
             <input type="date" />
           </div>
         </div>
-        <br />
-        <br />
-        <div>
-          <input type="checkbox" value="estacao" />
-          <label>Selecionar todas as estações</label>
-
+        <div class="stationSelect">
           <div>
-            <input type="checkbox" value="OSA" />
-            <label>OSA</label>
+            <input type="checkbox" id="selectAllStations" value="estacao" />
+            <label for="selectAllStations">Selecionar todas as estações</label>
           </div>
-          <div>
-            <input type="checkbox" value="PRA" />
-            <label>PRA</label>
+
+          <div class="stations">
+            <div class="station firstStation">
+              <input type="checkbox" id="osa" value="OSA" />
+              <label for="osa">OSA</label>
+            </div>
+            <div class="station">
+              <input type="checkbox" id="pra" value="PRA" />
+              <label for="pra">PRA</label>
+            </div>
+            <div class="station lastStation">
+              <input type="checkbox" id="cea" value="CEA" />
+              <label for="cea">CEA</label>
+            </div>
           </div>
         </div>
       </div>

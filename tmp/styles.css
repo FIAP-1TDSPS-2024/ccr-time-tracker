@@ -13,6 +13,7 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
+  background-color: #d0d0d0;
 }
 
 main {
@@ -90,6 +91,7 @@ footer {
   justify-content: space-between;
   margin-left: 4rem;
   margin-right: 4rem;
+  margin-bottom: 4rem;
 }
 
 .lines {
@@ -142,5 +144,64 @@ footer {
 }
 
 .linesInputs input[type="radio"]:focus + label {
+  border: 1px dotted #000;
+}
+
+.date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.stationSelect {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stations {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.stations input {
+  display: none;
+}
+
+.stations label {
+  width: 4rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #a8a8a8;
+  border: 1px solid black;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.firstStation label {
+  border-left: 0;
+  border-bottom-left-radius: 5px;
+}
+
+.lastStation label {
+  border-right: 0;
+  border-bottom-right-radius: 5px;
+}
+
+.stations input[type="checkbox"]:checked + label {
+  font-weight: bold;
+  border-bottom: 5px solid white !important;
+}
+
+.stations input[type="checkbox"]:focus + label {
   border: 1px dotted #000;
 }
