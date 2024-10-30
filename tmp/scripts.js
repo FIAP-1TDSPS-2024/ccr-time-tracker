@@ -14,7 +14,6 @@ function back() {
 
 const lines = [
     {
-        name: "linha8",
         lineNumber: "8",
         stations: [
             "AMB",
@@ -43,7 +42,6 @@ const lines = [
         ]
     },
     {
-        name: "linha9",
         lineNumber: "9",
         stations: [
             "OSA",
@@ -67,14 +65,14 @@ function renderLines() {
     for (const line of lines) {
         const lineInput = document.createElement("input")
         lineInput.type = "radio";
-        lineInput.id = line.name
+        lineInput.id = `linha${line.lineNumber}`
         lineInput.name = "linhas"
         lineInput.value = line.lineNumber
 
         const lineLabel = document.createElement("label")
         lineLabel.innerText = line.lineNumber
-        lineLabel.htmlFor = line.name
-        lineLabel.id = `${line.name}Label`
+        lineLabel.htmlFor = `linha${line.lineNumber}`
+        lineLabel.id = `linha${line.lineNumber}Label`
         lineLabel.className = "shadow"
 
         linesInputs.appendChild(lineInput)
