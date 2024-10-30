@@ -7,9 +7,14 @@ header {
   justify-content: space-between;
 }
 
+.icon {
+  background-color: #d9d9d9;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
 html,
 body {
-  height: 100%;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -18,6 +23,10 @@ body {
 
 main {
   flex: 1;
+}
+
+hr {
+  width: 97%;
 }
 
 footer {
@@ -30,13 +39,6 @@ footer {
   color: white;
 }
 
-.icon {
-  background-color: #d9d9d9;
-  width: 11rem;
-  height: 5.438rem;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
 
 .pageName {
   color: white;
@@ -84,6 +86,10 @@ footer {
   margin-left: 1.25rem;
   margin-right: 1.25rem;
   cursor: pointer;
+}
+
+.linesDateContainer {
+  margin-bottom: 1rem;
 }
 
 .linesDate {
@@ -154,6 +160,13 @@ footer {
   flex-direction: column;
 }
 
+.date input {
+  background-color: #A8A8A8;
+  border: none;
+  border-radius: 5px;
+  padding: .5rem;
+}
+
 .stationSelect {
   width: 100%;
   display: flex;
@@ -182,9 +195,9 @@ footer {
   justify-content: center;
   background-color: #a8a8a8;
   border: 1px solid black;
+  border-bottom: 5px solid #a8a8a8;
   border-right: 0;
   border-top: 0;
-  border-bottom: 0;
 }
 
 .firstStation label {
@@ -203,5 +216,67 @@ footer {
 }
 
 .stations input[type="checkbox"]:focus + label {
-  border: 1px dotted #000;
+  border: 1px dotted black;
+}
+
+.metricsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.metrics {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.metric {
+  border: 1px solid #a8a8a8;
+  border-radius: 7px;
+  width: 17.188rem;
+  height: 10.188rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-right: 0.5rem;
+}
+
+.metric h3 {
+  background-color: #7B7B7B;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  font-size: 1rem;
+  font-weight: bolder;
+  width: 100%;
+  height: 2.75rem;
+  margin: 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.metric h1 {
+  background-color: #ECECEC;
+  font-size: 2.5rem;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 100%;
+  height: 7.438rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.metricPositive h1 {
+  color: #03AC00;
+}
+
+.metricNegative h1 {
+  color: #C70000;
 }

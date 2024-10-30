@@ -1,78 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Inter"
-      rel="stylesheet"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="../global/global.css" />
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
-    <title>CCR Time Tracker</title>
-  </head>
 
-  <body>
-    <!-- Header -->
-    <header>
-      <div class="icon shadow">
-        <img src="../img/ccr.svg" />
-      </div>
-      <div class="pageName">TMP - Tempo médio de percurso</div>
-      <div class="headerSeparator"></div>
-      <h3 class="username">Wendell Nascimento</h3>
-      <div class="headerSeparator"></div>
-      <div onclick="back()" class="back shadow">
-        <a>Voltar</a>
-      </div>
-      <!-- div invisível que centraliza o botão de sair em telas maiores -->
-      <div></div>
-    </header>
-    <main>
-      <div>
-        <div class="linesDate">
-          <div class="lines">
-            <h4>Linhas</h4>
-            <div class="linesInputs">
-              <input type="radio" id="linha8" name="linhas" value="8" />
-              <label for="linha8" id="linha8Label" class="shadow">8</label>
-              <input type="radio" id="linha9" name="linhas" value="9" />
-              <label for="linha9" id="linha9Label" class="shadow">9</label>
-            </div>
-          </div>
-          <div class="date">
-            <h4>Data</h4>
-            <input type="date" />
+<head>
+  <meta charset="UTF-8" />
+  <link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../global/global.css" />
+  <link rel="stylesheet" type="text/css" href="./styles.css" />
+  <title>CCR Time Tracker</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="icon shadow">
+      <img src="../img/ccr.svg" />
+    </div>
+    <div class="pageName">TMP - Tempo médio de percurso</div>
+    <div class="headerSeparator"></div>
+    <h3 class="username">Wendell Nascimento</h3>
+    <div class="headerSeparator"></div>
+    <div onclick="back()" class="back shadow">
+      <a>Voltar</a>
+    </div>
+    <!-- div invisível que centraliza o botão de sair em telas maiores -->
+    <div></div>
+  </header>
+  <main>
+    <section class="linesDateContainer">
+      <div class="linesDate">
+        <div class="lines">
+          <h4>Linhas</h4>
+          <div class="linesInputs">
+            <input type="radio" id="linha8" name="linhas" value="8" />
+            <label for="linha8" id="linha8Label" class="shadow">8</label>
+            <input type="radio" id="linha9" name="linhas" value="9" />
+            <label for="linha9" id="linha9Label" class="shadow">9</label>
           </div>
         </div>
-        <div class="stationSelect">
-          <div>
-            <input type="checkbox" id="selectAllStations" value="estacao" />
-            <label for="selectAllStations">Selecionar todas as estações</label>
-          </div>
+        <div class="date">
+          <h4>Data</h4>
+          <input type="date" />
+        </div>
+      </div>
+      <div class="stationSelect">
+        <div>
+          <input type="checkbox" id="selectAllStations" value="estacao" />
+          <label for="selectAllStations">Selecionar todas as estações</label>
+        </div>
 
-          <div class="stations">
-            <div class="station firstStation">
-              <input type="checkbox" id="osa" value="OSA" />
-              <label for="osa">OSA</label>
-            </div>
-            <div class="station">
-              <input type="checkbox" id="pra" value="PRA" />
-              <label for="pra">PRA</label>
-            </div>
-            <div class="station lastStation">
-              <input type="checkbox" id="cea" value="CEA" />
-              <label for="cea">CEA</label>
-            </div>
+        <div class="stations">
+          <div class="station firstStation">
+            <input type="checkbox" id="osa" value="OSA" />
+            <label for="osa">OSA</label>
+          </div>
+          <div class="station">
+            <input type="checkbox" id="pra" value="PRA" />
+            <label for="pra">PRA</label>
+          </div>
+          <div class="station lastStation">
+            <input type="checkbox" id="cea" value="CEA" />
+            <label for="cea">CEA</label>
           </div>
         </div>
       </div>
-    </main>
-    <!-- Footer -->
-    <footer>
-      <p>Made with ❤️</p>
-    </footer>
+    </section>
 
-    <script src="./scripts.js"></script>
-  </body>
+    <hr>
+
+    <section class="metricsContainer">
+      <div class="metrics">
+        <div class="metric shadow">
+          <h3>Tempo médio de percurso</h3>
+          <h1>4:31 Min</h1>
+        </div>
+        <div class="metric shadow">
+          <h3>Tempo total de percurso</h3>
+          <h1>1:31 h</h1>
+        </div>
+        <div class="metric metricNegative shadow">
+          <h3>Diferença úlltimo mês</h3>
+          <h1>+4 Sec</h1>
+        </div>
+        <div class="metric metricPositive shadow">
+          <h3>Diferença último ano</h3>
+          <h1>-10 Sec</h1>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer>
+    <p>Made with ❤️</p>
+  </footer>
+
+  <script src="./scripts.js"></script>
+</body>
+
 </html>
