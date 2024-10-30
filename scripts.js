@@ -6,8 +6,8 @@ const password = document.getElementById("password");
 const email = document.getElementById("email");
 const button = document.getElementById("loginSubmit");
 
-const correctPassword = "123456";
-const correctEmail = "teste@fiap.com.br";
+const correctPassword = "1234";
+const correctEmail = "teste";
 
 password.addEventListener("keypress", function (event) {
   if (event.key == "Enter") {
