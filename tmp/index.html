@@ -40,7 +40,7 @@
         </div>
         <div class="date">
           <h4>Data</h4>
-          <input type="date" />
+          <input type="date" class="shadow" />
         </div>
       </div>
       <div class="stationSelect">
@@ -49,7 +49,7 @@
           <label for="selectAllStations">Selecionar todas as estações</label>
         </div>
 
-        <div class="stations">
+        <div class="stations shadow">
           <div class="station firstStation">
             <input type="checkbox" id="osa" value="OSA" />
             <label for="osa">OSA</label>
@@ -85,6 +85,33 @@
         <div class="metric metricPositive shadow">
           <h3>Diferença último ano</h3>
           <h1>-10 Sec</h1>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+    <section>
+      <div class="reloadContainer">
+        <div class="reload shadow">
+          <img src="../img/reload.svg" />
+        </div>
+      </div>
+      <div>
+        <div class="alert shadow">
+          <div>
+            <img src="../img/alert.svg" />
+            <a>Viagem muito longa</a>
+          </div>
+          <a>Início: 4:30 - Em linha</a>
+          <a class="alertRoute">OSA <> PRA</a>
+        </div>
+        <div class="alert shadow">
+          <div>
+            <img src="../img/alert.svg" />
+            <a>Viagem muito longa</a>
+          </div>
+          <a>Início: 2:30 - Fim: 2:50</a>
+          <a class="alertRoute">CEA <> VLJ</a>
         </div>
       </div>
     </section>
