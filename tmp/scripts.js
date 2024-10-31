@@ -12,7 +12,7 @@ function back() {
     navigate("../pesquisa/index.html")
 }
 
-const lines = [
+let rawLines = [
     {
         lineNumber: "8",
         selected: true,
@@ -70,7 +70,7 @@ const lines = [
     }
 ]
 
-function renderLines() {
+function renderLines(lines) {
     const linesInputs = document.getElementById("linesInputs")
 
     for (const line of lines) {
@@ -90,14 +90,38 @@ function renderLines() {
         lineLabel.htmlFor = `linha${line.lineNumber}`
         lineLabel.id = `linha${line.lineNumber}Label`
         lineLabel.className = "shadow"
-
+        lineLabel.onclick = function () {
+            changeStation(line.lineNumber)
+        }
         linesInputs.appendChild(lineInput)
         linesInputs.appendChild(lineLabel)
     }
 }
 
-function renderStations() {
+function changeStation(lineNumber) {
+    const lines = [];
+
+    for (let index = 0; index < rawLines.length; index++) {
+        const line = rawLines[index];
+
+        if (line.lineNumber == lineNumber) {
+            line.selected = true
+        } else {
+            line.selected = false
+        }
+
+        lines.push(line)
+    }
+
+    renderStations(lines)
+}
+
+function renderStations(lines) {
     const stationsElement = document.getElementById("stations");
+
+    while (stationsElement.firstChild) {
+        stationsElement.removeChild(stationsElement.firstChild)
+    }
 
     for (const line of lines) {
         if (!line.selected) {
@@ -129,5 +153,5 @@ function reload() {
     navigate(".")
 }
 
-renderLines()
-renderStations()
+renderLines(rawLines)
+renderStations(rawLines)
