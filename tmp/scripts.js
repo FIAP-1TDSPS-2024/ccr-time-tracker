@@ -12,65 +12,87 @@ function back() {
     navigate("../pesquisa/index.html")
 }
 
-let rawLines = [
-    {
-        lineNumber: "8",
-        selected: false,
-        stations: [
-            "AMB",
-            "AMT",
-            "SAR",
-            "ITA",
-            "ECA",
-            "SCO",
-            "JAN",
-            "JBE",
-            "BAR",
-            "AJO",
-            "STA",
-            "CAR",
-            "GMC",
-            "QUI",
-            "CSA",
-            "OSA",
-            "PRA",
-            "ILE",
-            "DDM",
-            "LAP",
-            "AGB",
-            "PBF",
-            "JPR"
-        ]
-    },
-    {
-        lineNumber: "9",
-        selected: true,
-        stations: [
-            "OSA",
-            "PRA",
-            "CEA",
-            "VLJ",
-            "CIU",
-            "PIN",
-            "HER",
-            "CIJ",
-            "VOL",
-            "BER",
-            "MOR",
-            "GRA",
-            "JDI",
-            "SMA",
-            "SCR",
-            "JUR",
-            "AUT",
-            "PIN",
-            "GRA",
-            "MVN"
-        ]
-    }
-]
+const linesKey = "all-lines";
 
-function renderLines(lines) {
+function getLines() {
+    return JSON.parse(localStorage.getItem(linesKey));
+}
+
+function saveLines(lines) {
+    return localStorage.setItem(linesKey, JSON.stringify(lines));
+}
+
+function validateLocalStorage() {
+    const linesItem = localStorage.getItem(linesKey);
+
+    if (linesItem) {
+        return;
+    }
+
+    const lines = [
+        {
+            lineNumber: "8",
+            selected: false,
+            stations: [
+                "AMB",
+                "AMT",
+                "SAR",
+                "ITA",
+                "ECA",
+                "SCO",
+                "JAN",
+                "JBE",
+                "BAR",
+                "AJO",
+                "STA",
+                "CAR",
+                "GMC",
+                "QUI",
+                "CSA",
+                "OSA",
+                "PRA",
+                "ILE",
+                "DDM",
+                "LAP",
+                "AGB",
+                "PBF",
+                "JPR"
+            ]
+        },
+        {
+            lineNumber: "9",
+            selected: true,
+            stations: [
+                "OSA",
+                "PRA",
+                "CEA",
+                "VLJ",
+                "CIU",
+                "PIN",
+                "HER",
+                "CIJ",
+                "VOL",
+                "BER",
+                "MOR",
+                "GRJ",
+                "JDI",
+                "SMA",
+                "SCR",
+                "JUR",
+                "AUT",
+                "PRN",
+                "GRA",
+                "MVN"
+            ]
+        }
+    ]
+
+    saveLines(lines)
+}
+
+function renderLines() {
+    const lines = getLines()
+
     const linesInputs = document.getElementById("linesInputs")
 
     for (const line of lines) {
@@ -99,6 +121,7 @@ function renderLines(lines) {
 }
 
 function changeStation(lineNumber) {
+    const rawLines = getLines()
     const lines = [];
 
     for (let index = 0; index < rawLines.length; index++) {
@@ -113,10 +136,13 @@ function changeStation(lineNumber) {
         lines.push(line)
     }
 
-    renderStations(lines)
+    saveLines(lines)
+    renderStations()
+    selectAllStations()
 }
 
-function renderStations(lines) {
+function renderStations() {
+    const lines = getLines()
     const stationsElement = document.getElementById("stations");
 
     // Remove all items from stations - refresh
@@ -124,29 +150,86 @@ function renderStations(lines) {
         stationsElement.removeChild(stationsElement.firstChild)
     }
 
-    for (const line of lines) {
-        if (!line.selected) {
-            continue
+    const selectedLine = lines.find((line) => line.selected)
+
+    for (let index = 0; index < selectedLine.stations.length; index++) {
+        const station = selectedLine.stations[index]
+        const stationElement = document.createElement("div");
+        stationElement.className = "station"
+        if (index == 0) {
+            stationElement.className = "station firstStation"
+        }
+        if (index == (selectedLine.stations.length - 1)) {
+            stationElement.className = "station lastStation"
         }
 
-        for (let index = 0; index < line.stations.length; index++) {
-            const station = line.stations[index]
-            const stationElement = document.createElement("div");
-            stationElement.className = "station"
-            if (index == 0) {
-                stationElement.className = "station firstStation"
-            }
-            if (index == (line.stations.length - 1)) {
-                stationElement.className = "station lastStation"
-            }
-
-            stationElement.innerHTML = `
-                <input type="checkbox" id="${station.toLocaleLowerCase()}" value="${station}" />
-                <label for="${station.toLocaleLowerCase()}">${station}</label>
+        stationElement.innerHTML = `
+                <input type="checkbox" id="${station}" value="${station}" />
+                <label id="${station}-label" onclick="selectStation(this.id)" for="${station}">${station}</label>
             `
 
-            stationsElement.appendChild(stationElement);
+        stationsElement.appendChild(stationElement);
+    }
+
+}
+
+function selectStation(id) {
+    const selectAllStationsElement = document.getElementById("selectAllStations")
+    selectAllStationsElement.checked = false
+
+    const clickedStation = id.split("-label")[0]
+
+    unselectStationsBeforeClicked(clickedStation)
+    selectClickedStation(clickedStation)
+}
+
+function unselectStationsBeforeClicked(clickedStation) {
+    const lines = getLines()
+
+    const selectedLine = lines.find((line) => line.selected)
+
+    const stations = selectedLine.stations
+
+    const stationsBeforeClickedStation = []
+    for (let index = 0; index < stations.length; index++) {
+        const currentStation = stations[index]
+
+        if (currentStation === clickedStation) {
+            break
         }
+
+        stationsBeforeClickedStation.push(currentStation)
+    }
+
+    stationsBeforeClickedStation.forEach((station) => {
+        const stationElement = document.getElementById(station)
+
+        stationElement.checked = false
+    })
+}
+
+function selectClickedStation(clickedStation) {
+    const stationElement = document.getElementById(clickedStation)
+
+    stationElement.checked = false
+}
+
+function selectAllStations() {
+    const selectAllStationsElement = document.getElementById("selectAllStations")
+    selectAllStationsElement.checked = true
+
+    const lines = getLines()
+
+    const selectedLine = lines.find((line) => line.selected)
+
+    const stations = selectedLine.stations
+
+    for (let index = 0; index < stations.length; index++) {
+        const station = stations[index]
+
+        const stationElement = document.getElementById(station)
+
+        stationElement.checked = true
     }
 }
 
@@ -154,5 +237,18 @@ function reload() {
     navigate(".")
 }
 
-renderLines(rawLines)
-renderStations(rawLines)
+function toDateInputValue(dateObject) {
+    const local = new Date(dateObject);
+    local.setMinutes(dateObject.getMinutes() - dateObject.getTimezoneOffset());
+    return local.toJSON().slice(0, 10);
+};
+
+function setDefaultDate() {
+    document.getElementById('dateInput').value = toDateInputValue(new Date());
+}
+
+setDefaultDate()
+validateLocalStorage()
+renderLines()
+renderStations()
+selectAllStations()
