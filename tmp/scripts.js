@@ -15,7 +15,7 @@ function back() {
 let rawLines = [
     {
         lineNumber: "8",
-        selected: true,
+        selected: false,
         stations: [
             "AMB",
             "AMT",
@@ -44,7 +44,7 @@ let rawLines = [
     },
     {
         lineNumber: "9",
-        selected: false,
+        selected: true,
         stations: [
             "OSA",
             "PRA",
@@ -82,7 +82,7 @@ function renderLines(lines) {
 
         if (line.selected) {
             lineInput.focus();
-            lineInput.select()
+            lineInput.checked = true
         }
 
         const lineLabel = document.createElement("label")
