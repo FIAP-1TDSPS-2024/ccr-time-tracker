@@ -15,6 +15,7 @@ function back() {
 const lines = [
     {
         lineNumber: "8",
+        selected: true,
         stations: [
             "AMB",
             "AMT",
@@ -43,6 +44,7 @@ const lines = [
     },
     {
         lineNumber: "9",
+        selected: false,
         stations: [
             "OSA",
             "PRA",
@@ -54,7 +56,16 @@ const lines = [
             "CIJ",
             "VOL",
             "BER",
-            "MOR"
+            "MOR",
+            "GRA",
+            "JDI",
+            "SMA",
+            "SCR",
+            "JUR",
+            "AUT",
+            "PIN",
+            "GRA",
+            "MVN"
         ]
     }
 ]
@@ -69,6 +80,11 @@ function renderLines() {
         lineInput.name = "linhas"
         lineInput.value = line.lineNumber
 
+        if (line.selected) {
+            lineInput.focus();
+            lineInput.select()
+        }
+
         const lineLabel = document.createElement("label")
         lineLabel.innerText = line.lineNumber
         lineLabel.htmlFor = `linha${line.lineNumber}`
@@ -80,4 +96,38 @@ function renderLines() {
     }
 }
 
+function renderStations() {
+    const stationsElement = document.getElementById("stations");
+
+    for (const line of lines) {
+        if (!line.selected) {
+            continue
+        }
+
+        for (let index = 0; index < line.stations.length; index++) {
+            const station = line.stations[index]
+            const stationElement = document.createElement("div");
+            stationElement.className = "station"
+            if (index == 0) {
+                stationElement.className = "station firstStation"
+            }
+            if (index == (line.stations.length - 1)) {
+                stationElement.className = "station lastStation"
+            }
+
+            stationElement.innerHTML = `
+                <input type="checkbox" id="${station.toLocaleLowerCase()}" value="${station}" />
+                <label for="${station.toLocaleLowerCase()}">${station}</label>
+            `
+
+            stationsElement.appendChild(stationElement);
+        }
+    }
+}
+
+function reload() {
+    navigate(".")
+}
+
 renderLines()
+renderStations()

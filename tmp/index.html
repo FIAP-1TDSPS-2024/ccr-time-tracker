@@ -45,19 +45,8 @@
           <label for="selectAllStations">Selecionar todas as estações</label>
         </div>
 
-        <div class="stations shadow">
-          <div class="station firstStation">
-            <input type="checkbox" id="osa" value="OSA" />
-            <label for="osa">OSA</label>
-          </div>
-          <div class="station">
-            <input type="checkbox" id="pra" value="PRA" />
-            <label for="pra">PRA</label>
-          </div>
-          <div class="station lastStation">
-            <input type="checkbox" id="cea" value="CEA" />
-            <label for="cea">CEA</label>
-          </div>
+        <div class="stations shadow" id="stations">
+
         </div>
       </div>
     </section>
@@ -88,7 +77,7 @@
     <hr>
     <section>
       <div class="reloadContainer">
-        <div class="reload shadow">
+        <div class="reload shadow" onclick="reload()">
           <img src="../img/reload.svg" />
         </div>
       </div>

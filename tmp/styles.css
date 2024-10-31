@@ -294,6 +294,7 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   width: 3.625rem;
   height: 3.625rem;
   background-color: #A7A7A7;
