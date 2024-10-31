@@ -119,6 +119,7 @@ function changeStation(lineNumber) {
 function renderStations(lines) {
     const stationsElement = document.getElementById("stations");
 
+    // Remove all items from stations - refresh
     while (stationsElement.firstChild) {
         stationsElement.removeChild(stationsElement.firstChild)
     }
