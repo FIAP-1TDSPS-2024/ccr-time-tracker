@@ -217,8 +217,6 @@ function selectClickedStation(clickedStation) {
 
   const stations = selectedLine.stations;
 
-  //stationElement.checked = false;
-
   const alreadyCheckedStations = stations.filter((station) => {
     const stationElement = document.getElementById(station);
     return stationElement.manualChecked === true;
@@ -232,8 +230,6 @@ function selectClickedStation(clickedStation) {
       }
     );
   }
-
-  console.log(selectedStationIsBeforeAlreadyCheckedStations);
 
   if (
     alreadyCheckedStations.length === 0 ||
