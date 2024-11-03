@@ -176,8 +176,11 @@ hr {
 
 .stations {
   display: flex;
-  flex-wrap: wrap;
+  overflow: auto;
+  white-space: nowrap;
   justify-content: center;
+  width: 95%;
+  height: 4rem;
   margin-left: 1rem;
   margin-right: 1rem;
   border-bottom-left-radius: 5px;
