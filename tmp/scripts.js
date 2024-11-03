@@ -179,6 +179,83 @@ function selectStation(id) {
   const clickedStation = id.split("-label")[0];
 
   selectClickedStation(clickedStation);
+  changeMetrics();
+}
+
+function changeMetrics() {
+  const lines = getLines();
+  const selectedLine = lines.find((line) => line.selected);
+  const stations = selectedLine.stations;
+
+  const selectedStations = stations.filter((station) => {
+    const stationElement = document.getElementById(station);
+    return stationElement.manualChecked === true;
+  });
+
+  const metricsElement = document.getElementById("metrics");
+
+  // Remove all items from metrics - refresh
+  while (metricsElement.firstChild) {
+    metricsElement.removeChild(metricsElement.firstChild);
+  }
+
+  if (selectedStations.length === 0) {
+    return;
+  }
+
+  const firstStation = selectedStations[0];
+  const lastStation = selectedStations[selectedStations.length - 1];
+
+  const firstStationIndex = stations.indexOf(firstStation);
+  const lastStationIndex = stations.indexOf(lastStation);
+
+  const stationsBetween = stations.slice(
+    firstStationIndex,
+    lastStationIndex + 1
+  );
+
+  const metrics = [
+    {
+      name: "Tempo médio de percurso",
+      value: `${String(
+        (((stationsBetween.length - 1) * 2.5) / stationsBetween.length).toFixed(
+          2
+        )
+      ).replace(".", ":")} Min`,
+    },
+    {
+      name: "Tempo total de percurso",
+      value: `${Math.round((stationsBetween.length - 1) * 3)} Min`,
+    },
+    {
+      name: "Diferença último mês",
+      value: `-${Math.floor(Math.random() * 5)} Seg`,
+      negative: true,
+    },
+    {
+      name: "Diferença último ano",
+      value: `+${Math.floor(Math.random() * 10)} Seg`,
+      positive: true,
+    },
+  ];
+
+  for (let index = 0; index < metrics.length; index++) {
+    const metric = metrics[index];
+    const metricElement = document.createElement("div");
+    metricElement.className = "metric";
+    metricElement.innerHTML = `
+                <h3 class="metricName
+                ">${metric.name}</h3>
+                <h1 class="metricValue">${metric.value}</h1>
+            `;
+    if (metric.negative) {
+      metricElement.className = "metric metricNegative";
+    }
+    if (metric.positive) {
+      metricElement.className = "metric metricPositive";
+    }
+    metricsElement.appendChild(metricElement);
+  }
 }
 
 function unselectAnotherStations(clickedStation) {
@@ -308,6 +385,8 @@ function selectAllStations() {
     stationElement.checked = true;
     stationElement.manualChecked = true;
   }
+
+  changeMetrics();
 }
 
 function reload() {
@@ -329,3 +408,4 @@ validateLocalStorage();
 renderLines();
 renderStations();
 selectAllStations();
+changeMetrics();

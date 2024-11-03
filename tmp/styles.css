@@ -39,7 +39,6 @@ hr {
   width: 97%;
 }
 
-
 .pageName {
   color: white;
   font-size: x-large;
@@ -161,10 +160,10 @@ hr {
 }
 
 .date input {
-  background-color: #A8A8A8;
+  background-color: #a8a8a8;
   border: none;
   border-radius: 5px;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .stationSelect {
@@ -227,7 +226,7 @@ hr {
   justify-content: center;
 }
 
-.metrics {
+#metrics {
   display: flex;
   width: 50%;
   justify-content: center;
@@ -248,7 +247,7 @@ hr {
 }
 
 .metric h3 {
-  background-color: #7B7B7B;
+  background-color: #7b7b7b;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   font-size: 1rem;
@@ -263,7 +262,7 @@ hr {
 }
 
 .metric h1 {
-  background-color: #ECECEC;
+  background-color: #ececec;
   font-size: 2.5rem;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -276,11 +275,11 @@ hr {
 }
 
 .metricPositive h1 {
-  color: #03AC00;
+  color: #03ac00;
 }
 
 .metricNegative h1 {
-  color: #C70000;
+  color: #c70000;
 }
 
 .reloadContainer {
@@ -297,7 +296,7 @@ hr {
   cursor: pointer;
   width: 3.625rem;
   height: 3.625rem;
-  background-color: #A7A7A7;
+  background-color: #a7a7a7;
   border-radius: 5px;
 }
 
@@ -310,7 +309,7 @@ hr {
   padding-top: 1rem;
   padding-bottom: 1rem;
   margin: 2rem;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   border-radius: 5px;
 }
 
