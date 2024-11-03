@@ -228,13 +228,10 @@ hr {
   align-items: center;
   justify-content: center;
 }
-
 #metrics {
-  display: flex;
-  width: 50%;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
 
 .metric {
