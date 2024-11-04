@@ -400,7 +400,10 @@ function toDateInputValue(dateObject) {
 }
 
 function setDefaultDate() {
-  document.getElementById("dateInput").value = toDateInputValue(new Date());
+  const dateInput = document.getElementById("dateInput");
+
+  dateInput.value = toDateInputValue(new Date());
+  dateInput.max = toDateInputValue(new Date());
 }
 
 setDefaultDate();
