@@ -11,8 +11,6 @@ html,
 body {
   margin: 0;
   height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 footer {
@@ -23,6 +21,8 @@ footer {
   align-items: center;
   justify-content: center;
   color: white;
+  position: relative;
+  top: 11%;
 }
 
 hr {
@@ -71,6 +71,7 @@ hr {
   font-size: 24px;
   color: white;
   font-weight: bolder;
+  display: flex;
 }
 
 .exit {
@@ -218,4 +219,45 @@ main {
 #closePopUpButton {
   color: black;
   background-color: #b3b3b3;
+}
+
+@media (max-width: 1024px) {
+  .username {
+    display: none;
+  }
+
+  .headerSeparator {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .username {
+    display: none;
+  }
+
+  .headerSeparator {
+    display: none;
+  }
+}
+
+@media (min-width: 848px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .icon {
+    display: none;
+  }
+
+  header {
+    justify-content: space-around;
+  }
+
+  .invisible {
+    display: none;
+  }
 }
