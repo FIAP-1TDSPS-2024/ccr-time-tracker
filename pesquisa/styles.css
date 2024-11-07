@@ -248,11 +248,7 @@ main {
   }
 }
 
-@media (max-width: 650px) {
-  .icon {
-    display: none;
-  }
-
+@media (max-width: 800px) {
   header {
     justify-content: space-around;
   }
@@ -315,5 +311,11 @@ main {
 
   #addItemButton {
     margin-top: 2rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .icon {
+    display: none;
   }
 }

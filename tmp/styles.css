@@ -45,6 +45,7 @@ hr {
   border-radius: 5px;
   width: 45%;
   height: 3rem;
+  margin-left: 1rem;
   display: flex;
   align-items: center;
   justify-content: flex-start;
