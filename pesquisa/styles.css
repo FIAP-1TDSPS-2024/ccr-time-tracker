@@ -77,6 +77,7 @@ hr {
 .exit {
   display: flex;
   align-items: center;
+  border: none;
   justify-content: center;
   width: 8.125rem;
   height: 3rem;
@@ -114,6 +115,7 @@ main {
   background-color: #e6e6e6;
   display: flex;
   align-items: center;
+  cursor: pointer;
   justify-content: space-between;
   flex-direction: column;
   margin-left: 1rem;
@@ -209,6 +211,7 @@ main {
 
 .button {
   width: 10rem;
+  cursor: pointer;
   height: 1.785rem;
   border: none;
   border-radius: 5px;

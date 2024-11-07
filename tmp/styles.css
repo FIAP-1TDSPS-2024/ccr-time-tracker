@@ -81,6 +81,7 @@ hr {
   height: 3rem;
   border-radius: 5px;
   background-color: #b3b3b3;
+  border: none;
   color: white;
   font-weight: bold;
   margin-left: 1.25rem;
@@ -114,6 +115,7 @@ hr {
   width: 4rem;
   height: 2.75rem;
   display: flex;
+  cursor: pointer;
   align-items: center;
   justify-content: center;
   position: absolute;
@@ -163,6 +165,7 @@ hr {
 .date input {
   background-color: #a8a8a8;
   border: none;
+  cursor: pointer;
   border-radius: 5px;
   padding: 0.5rem;
 }
@@ -195,6 +198,7 @@ hr {
 .stations label {
   width: 4rem;
   height: 2.75rem;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -298,6 +302,7 @@ hr {
   width: 3.625rem;
   height: 3.625rem;
   background-color: #a7a7a7;
+  border: none;
   border-radius: 5px;
 }
 
