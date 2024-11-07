@@ -325,3 +325,64 @@ hr {
 .alert div > img {
   margin-right: 1rem;
 }
+
+@media (max-width: 1360px) {
+  .stations {
+    justify-content: initial;
+  }
+}
+
+@media (max-width: 1000px) {
+  .username {
+    display: none;
+  }
+
+  .headerSeparator {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  #metrics {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .alertsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .alert {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: space;
+    width: 15rem;
+    height: 10rem;
+  }
+
+  .alert div > img {
+    margin-bottom: 0.3rem;
+    margin-right: 0;
+  }
+
+  .alertIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .alertRoute {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .reloadContainer {
+    margin-right: 0;
+  }
+}
