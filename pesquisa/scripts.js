@@ -2,16 +2,15 @@ function navigate(path) {
   window.location.href = path;
 }
 
-const logged = localStorage.getItem('logged');
+const logged = localStorage.getItem("logged");
 
-if (logged !== 'true') {
-  navigate("../index.html")
+if (logged !== "true") {
+  navigate("../home/index.html");
 }
 
-
 function exit() {
-  localStorage.setItem('logged', '');
-  navigate("../index.html");
+  localStorage.setItem("logged", "");
+  navigate("../home/index.html");
 }
 
 function search() {
@@ -68,9 +67,11 @@ function createItems(categoryName) {
     };
     item.innerHTML = `
       <img src="${categoryItem.icon}" class="categoryIcon">
-      <img onclick="setFavorite(this)" value="${categoryItem.name
-      }" class="star" src="${categoryItem.favorite ? "../img/star.svg" : "../img/star-disabled.svg"
-      }" />
+      <img onclick="setFavorite(this)" value="${
+        categoryItem.name
+      }" class="star" src="${
+      categoryItem.favorite ? "../img/star.svg" : "../img/star-disabled.svg"
+    }" />
       <div class="categoryName"><a>${categoryItem.name}</a></div>
     `;
 

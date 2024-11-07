@@ -1,0 +1,139 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container {
+  background-color: #d0d0d0;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 176px;
+  height: 87px;
+}
+
+.login {
+  background-color: #8b8b8b;
+  width: 32.625rem;
+  height: 33.5rem;
+  padding: 2rem;
+  border-radius: 30px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login h3 {
+  margin-top: 3.5rem;
+  font-size: 20px;
+}
+
+.loginInput {
+  width: 19.938rem;
+  height: 2.813rem;
+  padding-left: 1rem;
+  border: none;
+  border-radius: 10px;
+}
+
+.invalidLoginInput {
+  border: 1px solid red;
+}
+
+.invalidLoginInput::placeholder {
+  color: red;
+}
+
+.loginSubmit {
+  width: 15.938rem;
+  height: 2.5rem;
+  background-color: #476087;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.loginSubmit:disabled {
+  background-color: #6e7d95;
+  cursor: not-allowed;
+}
+
+.input {
+  margin: 0.5rem;
+}
+
+#forgotPassword {
+  margin: 1rem;
+  width: 15rem;
+  height: 2.5rem;
+  text-align: center;
+}
+
+#forgotPassword:hover {
+  cursor: pointer;
+}
+
+#popUp {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#popUpContainer {
+  width: 34.136rem;
+  height: 21.407rem;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#popUpContainer p {
+  width: 22.196rem;
+  text-align: center;
+}
+
+#popUpContainer input {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  footer {
+    display: none;
+  }
+
+  .login {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 0;
+  }
+}
