@@ -106,6 +106,16 @@ function addItem() {
 
   const allItems = getItems();
 
+  if (itemSlug.value === "" || itemURL.value === "") {
+    return;
+  }
+
+  const alreadyExists = allItems.find((item) => item.name === itemSlug.value);
+
+  if (alreadyExists) {
+    return;
+  }
+
   allItems.push({
     name: itemSlug.value,
     icon: "../img/train.svg",
